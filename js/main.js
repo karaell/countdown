@@ -19,7 +19,9 @@ function renderCountData(years, days, hours) {
         years: years,
         days: days,
         hours: hours,
-    })
+    },
+    { delimiter: ', or ' }
+    )
 
     UI_ELEMENTS.RESULT.textContent = resultInterval;
 }

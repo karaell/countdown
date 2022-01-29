@@ -535,6 +535,8 @@ function renderCountData(years, days, hours) {
         years: years,
         days: days,
         hours: hours
+    }, {
+        delimiter: ', or '
     });
     _view.UI_ELEMENTS.RESULT.textContent = resultInterval;
 }
