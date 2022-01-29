@@ -16,11 +16,11 @@ function getInterval() {
 
 function renderCountData(years, days, hours) {
     const resultInterval = formatDuration({
-        years: years,
-        days: days,
-        hours: hours,
-    },
-    { delimiter: ', or ' }
+        years,
+        days,
+        hours,
+        },
+        { delimiter: ', or ' }
     )
 
     UI_ELEMENTS.RESULT.textContent = resultInterval;

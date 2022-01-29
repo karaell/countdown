@@ -532,9 +532,9 @@ function getInterval() {
 }
 function renderCountData(years, days, hours) {
     const resultInterval = _dateFns.formatDuration({
-        years: years,
-        days: days,
-        hours: hours
+        years,
+        days,
+        hours
     }, {
         delimiter: ', or '
     });
