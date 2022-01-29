@@ -525,8 +525,6 @@ _view.UI_ELEMENTS.BTN.addEventListener('click', getInterval);
 function getInterval() {
     const currentDate = new Date().getTime();
     const userDate = new Date(_view.UI_ELEMENTS.INPUT.value).getTime();
-    console.log(new Date());
-    console.log(new Date(_view.UI_ELEMENTS.INPUT.value));
     const hours = _dateFns.differenceInHours(userDate, currentDate);
     const days = _dateFns.differenceInDays(userDate, currentDate);
     const years = _dateFns.differenceInYears(userDate, currentDate);
@@ -538,7 +536,6 @@ function renderCountData(years, days, hours) {
         days: days,
         hours: hours
     });
-    console.log(resultInterval);
     _view.UI_ELEMENTS.RESULT.textContent = resultInterval;
 }
 

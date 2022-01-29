@@ -7,9 +7,6 @@ function getInterval() {
     const currentDate = new Date().getTime();
     const userDate = new Date(UI_ELEMENTS.INPUT.value).getTime();
 
-    console.log(new Date())
-    console.log(new Date(UI_ELEMENTS.INPUT.value))
-
     const hours = differenceInHours(userDate, currentDate);
     const days = differenceInDays(userDate, currentDate);
     const years = differenceInYears(userDate, currentDate);
@@ -23,8 +20,6 @@ function renderCountData(years, days, hours) {
         days: days,
         hours: hours,
     })
-
-    console.log(resultInterval)
 
     UI_ELEMENTS.RESULT.textContent = resultInterval;
 }
