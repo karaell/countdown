@@ -1,30 +1,30 @@
-import { formatDuration } from 'date-fns';
+import { formatDuration, differenceInHours, differenceInDays, differenceInYears } from 'date-fns';
 import { UI_ELEMENTS } from './view';
 
-UI_ELEMENTS.BTN.addEventListener('click', getCountDate);
+UI_ELEMENTS.BTN.addEventListener('click', getInterval);
 
-function getCountDate () {
+function getInterval() {
     const currentDate = new Date().getTime();
     const userDate = new Date(UI_ELEMENTS.INPUT.value).getTime();
+
+    console.log(new Date())
+    console.log(new Date(UI_ELEMENTS.INPUT.value))
+
+    const hours = differenceInHours(userDate, currentDate);
+    const days = differenceInDays(userDate, currentDate);
+    const years = differenceInYears(userDate, currentDate);
     
-    const result = userDate - currentDate;
-    convertData(result);
-}
-
-function convertData (result) {
-    const hours = Math.floor ( result / (1000 * 60 * 60));
-    const days = Math.floor (result / (1000 * 60 * 60 * 24));
-    const years = Math.floor (result / (1000 * 60 * 60 * 24 * 365));
-
-    renderCountData (years, days, hours);
+    renderCountData(years, days, hours);
 }
 
 function renderCountData(years, days, hours) {
-    const interval = formatDuration({
+    const resultInterval = formatDuration({
         years: years,
         days: days,
         hours: hours,
     })
 
-    UI_ELEMENTS.RESULT.textContent = interval;
+    console.log(resultInterval)
+
+    UI_ELEMENTS.RESULT.textContent = resultInterval;
 }
